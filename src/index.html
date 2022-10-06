@@ -5,18 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="wrapper">
         <div class="user-container">
-            대화명: <input type="text" id="nickname">
+            <label for="'nickname">대화명</label>
+            <input type="text" id="nickname">
         </div>
         <div class="display-container">
-            <ul class="chatting-list"></ul>
+            <ul class="chatting-list">
+            </ul>
         </div>
         <div class="input-container">
-            <input type="text" class="chatting-input">
-            <button class="send-button">전송</button>
+            <span>
+                <input type="text" class="chatting-input">
+                <button class="send-button">전송</button>
+            </span>
         </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
