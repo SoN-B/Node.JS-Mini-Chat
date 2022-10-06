@@ -12,7 +12,9 @@ const PORT = process.env.PORT || 5000;
 
 io.on("connection", (socket) => {
     // 연결이 이루어지면 그에 관련된 정보가 socket에 담겨짐
-    console.log("object connected");
+    socket.on("chatting", (data) => {
+        io.emit("chatting", data);
+    });
 });
 
 server.listen(PORT, () => console.log(`server listening on port ${PORT}`));
