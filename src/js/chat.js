@@ -13,6 +13,7 @@ chatInput.addEventListener("keypress", (event) => {
         send();
     }
 });
+sendButton.addEventListener("click", send);
 
 function send() {
     const param = {
@@ -22,8 +23,6 @@ function send() {
 
     socket.emit("chatting", param); // 인수1: 채널id, 인수2: 내용
 }
-
-sendButton.addEventListener("click", send);
 
 socket.on("chatting", (data) => {
     // 서버로 부터 받음
@@ -54,4 +53,5 @@ function LiModel(name, msg, time) {
     };
 }
 
-console.log(socket);
+// 클라이언트 접속 & 메시지 전달 - socket.emit() -> 서버연결확인 & 전달받음 - io.on() & socket.on()
+// 서버에서 클라이언트로 전달 - io.emit() -> 클라이언트 전달받음 - socket.on()
